@@ -6,21 +6,24 @@ let h = 400;
 
 
 function setup() {
-  createCanvas(400, 400, WEBGL);
+  createCanvas(800, 800, WEBGL);
   a = w / scl;
   b = h / scl;  
 }
 
 function draw() {
   background(0);
-  translate(-200, 50);
-  rotateX(PI / 2);  
-  for(let x = 0; x < a; x++){
-    for(let y = 0; y < b; y++){
-      stroke(255);
-      noFill();
-      rect(x*scl, y*scl, scl, scl);
+  // translate(-200, 50);
+  // rotateX(PI/2);  
+  stroke(255);
+  noFill();  
+  for(let y = 0; y < b; y++){
+    beginShape(QUAD_STRIP);
+    for(let x = 0; x < a; x++){
+      vertex(x*scl, y*scl);
+      vertex(x*scl, (y+1)*scl);      
     }
+    endShape();
   }
 }
 
