@@ -13,9 +13,12 @@ function setup() {
 
 function draw() {
   background(0);
-  
+  translate(0, 50);
+  rotateX(PI / 2);  
   for(let x = 0; x < a; x++){
     for(let y = 0; y < b; y++){
+      stroke(255);
+      noFill();
       rect(x*scl, y*scl, scl, scl);
     }
   }
