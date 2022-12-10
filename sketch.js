@@ -9,8 +9,9 @@ function setup() {
   createCanvas(800, 800, WEBGL);
   a = w / scl;
   b = h / scl;  
-    for(let y = 0; y < b; y++){
-      for(let x = 0; x < a; x++){
+    for(let x = 0; x < a; x++){
+      land[x] = [];
+      for(let y = 0; y < b; y++){
         land[x][y] = random(-10, 10);
       }
     }
