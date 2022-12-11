@@ -21,22 +21,22 @@ function setup() {
 
 function draw() {
   
-  movement += 0.1;
-  let xUP = 0;
+  movement -= 0.1;
+  let xUP = movement;
     for(let x = 0; x < a; x++){
-      let yUP = movement;
+      let yUP = 0;
       for(let y = 0; y < b; y++){
-        land[x][y] = map(noise(xUP, yUP), 0, 1, -10, 10);
-        xUP += 0.1;
+        land[x][y] = map(noise(xUP, yUP), 0, 1, -50, 50);
+        xUP += 0.2;
       }
-      yUP += 0.1;
+      yUP += 0.2;
     }  
   
   frameRate(60);
-  background(0);
+  background(255);
   translate(-440, 0);
   rotateX(PI / 2.2);  
-  stroke(255);
+  stroke(0);
   noFill();  
   for(let y = 0; y < b; y++){
     beginShape(QUAD_STRIP);
