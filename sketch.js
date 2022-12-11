@@ -14,7 +14,7 @@ function setup() {
     for(let x = 0; x < a; x++){
       land[x] = [];
       for(let y = 0; y < b; y++){
-        land[x][y] map(noise(xUP, yUP), 0, 1, -10, 10);
+        land[x][y] = 0;
       }
     }
 }
