@@ -8,6 +8,7 @@ let movement = 0;
 
 function setup() {
   createCanvas(800, 800, WEBGL);
+  colorMode(HSB, 4, 217, 255);  
   a = w / scl;
   b = h / scl; 
   
@@ -21,6 +22,16 @@ function setup() {
 
 function draw() {
   
+  frameRate(60);
+  background(0);
+  translate(-440, 0);
+  rotateX(PI / 2.2);  
+  drawingContext.shadowBlur = 32;
+  drawingContext.shadowColor = color(207, 7, 99);  
+  stroke(255);
+  noFill();
+
+  
   movement -= 0.1;
   let xUP = movement;
     for(let x = 0; x < a; x++){
@@ -32,12 +43,6 @@ function draw() {
       yUP += 0.2;
     }  
   
-  frameRate(60);
-  background(255);
-  translate(-440, 0);
-  rotateX(PI / 2.2);  
-  stroke(0);
-  noFill();  
   for(let y = 0; y < b; y++){
     beginShape(QUAD_STRIP);
     for(let x = 0; x < a; x++){
