@@ -8,7 +8,9 @@ let movement = 0;
 
 function setup() {
   createCanvas(800, 800, WEBGL);
-  colorMode(HSB, 4, 217, 255);  
+  colorMode(HSB, 360, 100, 100, 100);  
+  stroke(225, 114, 100);
+  noFill();    
   a = w / scl;
   b = h / scl; 
   
@@ -20,17 +22,14 @@ function setup() {
     }
 }
 
+
 function draw() {
   
   frameRate(60);
   background(0);
   translate(-440, 0);
   rotateX(PI / 2.2);  
-  drawingContext.shadowBlur = 32;
-  drawingContext.shadowColor = color(207, 7, 99);  
-  stroke(255);
-  noFill();
-
+  blendMode(ADD);
   
   movement -= 0.1;
   let xUP = movement;
