@@ -5,9 +5,11 @@ let w = 880;
 let h = 880;
 let land = [];
 let movement = 0;
+let ball;
 
 function setup() {
   createCanvas(800, 800, WEBGL);
+  ball = new Particle();  
   colorMode(HSB, 360, 100, 100, 100);  
   stroke(225, 114, 100);
   noFill();    
@@ -30,6 +32,8 @@ function draw() {
   translate(-440, 0);
   rotateX(PI / 2.2);  
   blendMode(ADD);
+  ball.update();
+  ball.show();  
   
   movement -= 0.1;
   let xUP = movement;
